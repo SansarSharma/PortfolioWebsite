@@ -14,12 +14,11 @@ I chose React for this project because I wanted full control over the design and
 - [Screenshots](#screenshots)
 - [Requirements](#requirements)
 - [How to Run](#how-to-run)
-- [Notes](#notes)
 
 ---
 
 ## Live Demo
-link
+https://portfolio-website-seven-eosin-92.vercel.app/
 
 ---
 

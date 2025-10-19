@@ -155,8 +155,7 @@ const ContactPage = () => {
 
             <div className="resume-download">
               <a 
-                href="https://www.linkedin.com/in/sansar-sharma-62299929b/" 
-                download="sansar_sharma_resume.pdf"
+                href="https://drive.google.com/file/d/13TD_p_4hm-SvztrZv0B3H4zGVwUjscCt/view?usp=sharing" 
                 className="download-btn"
               >
                 <FaFileDownload />
