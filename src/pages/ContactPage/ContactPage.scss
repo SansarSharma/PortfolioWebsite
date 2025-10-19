@@ -1,0 +1,324 @@
+/**
+ * ContactPage Styles
+ * 
+ * Styling for the contact page with form and contact information.
+ * Features a two-column layout with form and info side by side.
+ */
+
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.contact-page {
+  @include animated-gradient;
+  padding: $spacing-3xl $spacing-lg;
+  min-height: 100vh; 
+  min-width: 100vw;  
+  padding: $spacing-3xl $spacing-lg;
+  overflow-x: hidden; 
+  
+  @include tablet {
+    padding: $spacing-2xl $spacing-md;
+  }
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    h1 {
+      font-size: $font-size-5xl;
+      text-align: center;
+      margin-bottom: $spacing-md;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      
+      @include tablet {
+        font-size: $font-size-4xl;
+      }
+    }
+    
+    .subtitle {
+      text-align: center;
+      font-size: $font-size-xl;
+      opacity: 0.9;
+      margin-bottom: $spacing-3xl;
+      
+      @include tablet {
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-2xl;
+      }
+    }
+    
+    // ============================================
+    // CONTACT CONTAINER (Two Columns)
+    // ============================================
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: $spacing-2xl;
+      
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: $spacing-xl;
+      }
+    }
+    
+    // ============================================
+    // CONTACT INFO (Left Side)
+    // ============================================
+    
+    .contact-info {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 0;
+      padding: $spacing-2xl;
+      box-shadow: $shadow-md;
+      height: fit-content;
+      
+      @include tablet {
+        padding: $spacing-xl;
+      }
+      
+      h2 {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-xl;
+        color: $white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        
+        @include tablet {
+          font-size: $font-size-xl;
+        }
+      }
+      
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-md;
+        margin-bottom: $spacing-xl;
+        
+        .info-icon {
+          font-size: $font-size-2xl;
+          color: $accent-cyan;
+          flex-shrink: 0;
+          margin-top: $spacing-xs;
+        }
+        
+        h3 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-xs;
+          color: $white;
+        }
+        
+        a {
+          color: rgba($white, 0.9);
+          text-decoration: none;
+          font-size: $font-size-base;
+          transition: color $transition-base;
+          word-break: break-word;
+          
+          &:hover {
+            color: $accent-cyan;
+          }
+        }
+      }
+      
+      .social-links {
+        margin-bottom: $spacing-xl;
+        
+        h3 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-md;
+          color: $white;
+        }
+        
+        .social-icons {
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-md;
+          
+          .social-link {
+            display: flex;
+            align-items: center;
+            gap: $spacing-md;
+            padding: $spacing-md;
+            background: rgba($white, 0.05);
+            border-radius: 0;
+            color: $white;
+            text-decoration: none;
+            transition: all $transition-base;
+            border: 1px solid rgba($accent-cyan, 0.2);
+            
+            svg {
+              font-size: $font-size-xl;
+              color: $accent-cyan;
+            }
+            
+            span {
+              font-size: $font-size-base;
+            }
+            
+            &:hover {
+              background: rgba($accent-cyan, 0.2);
+              border-color: $accent-cyan;
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+      
+      .resume-download {
+        .download-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: $spacing-md;
+          width: 100%;
+          padding: $spacing-md $spacing-lg;
+          background: $accent-cyan;
+          color: $white;
+          text-decoration: none;
+          border-radius: 0;
+          font-size: $font-size-base;
+          font-weight: $font-weight-semibold;
+          transition: all $transition-base;
+          border: 2px solid $accent-cyan;
+          
+          svg {
+            font-size: $font-size-xl;
+          }
+          
+          &:hover {
+            background: $bright-cyan;
+            border-color: $bright-cyan;
+            transform: translateY(-2px);
+            box-shadow: $shadow-lg;
+          }
+        }
+      }
+    }
+    
+    // ============================================
+    // CONTACT FORM (Right Side)
+    // ============================================
+    
+    .contact-form {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 0;
+      padding: $spacing-2xl;
+      box-shadow: $shadow-md;
+      
+      @include tablet {
+        padding: $spacing-xl;
+      }
+      
+      h2 {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-xl;
+        color: $white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        
+        @include tablet {
+          font-size: $font-size-xl;
+        }
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+        
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: $spacing-lg;
+          
+          @include tablet {
+            grid-template-columns: 1fr;
+          }
+        }
+        
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-sm;
+          
+          label {
+            font-size: $font-size-base;
+            font-weight: $font-weight-semibold;
+            color: $white;
+          }
+          
+          input,
+          textarea {
+            padding: $spacing-md;
+            background: rgba($white, 0.1);
+            border: 1px solid rgba($accent-cyan, 0.3);
+            border-radius: 0;
+            color: $white;
+            font-size: $font-size-base;
+            font-family: inherit;
+            transition: all $transition-base;
+            
+            &::placeholder {
+              color: rgba($white, 0.5);
+            }
+            
+            &:focus {
+              outline: none;
+              border-color: $accent-cyan;
+              background: rgba($white, 0.15);
+            }
+          }
+          
+          textarea {
+            resize: vertical;
+            min-height: 150px;
+          }
+        }
+        
+        .status-message {
+          padding: $spacing-md;
+          border-radius: 0;
+          font-size: $font-size-base;
+          text-align: center;
+          
+          &.success {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            color: #00ff00;
+          }
+          
+          &.error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            color: #ff6b6b;
+          }
+        }
+        
+        .submit-btn {
+          padding: $spacing-md $spacing-2xl;
+          background: $accent-cyan;
+          color: $white;
+          font-size: $font-size-lg;
+          font-weight: $font-weight-semibold;
+          border: 2px solid $accent-cyan;
+          border-radius: 0;
+          cursor: pointer;
+          transition: all $transition-base;
+          
+          &:hover:not(:disabled) {
+            background: $bright-cyan;
+            border-color: $bright-cyan;
+            transform: translateY(-2px);
+            box-shadow: $shadow-lg;
+          }
+          
+          &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

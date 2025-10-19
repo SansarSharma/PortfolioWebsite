@@ -1,0 +1,166 @@
+/**
+ * Global Styles
+ * 
+ * Base styles applied to the entire application.
+ * Includes resets, typography, and common element styles.
+ */
+
+@import './variables.scss';
+
+// ============================================
+// RESET & BASE STYLES
+// ============================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll; // Always show vertical scrollbar space
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $charcoal;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; // Prevent horizontal scroll
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: $font-size-5xl;
+  
+  @media (max-width: $breakpoint-tablet) {
+    font-size: $font-size-4xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-4xl;
+  
+  @media (max-width: $breakpoint-tablet) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-3xl;
+}
+
+h4 {
+  font-size: $font-size-2xl;
+}
+
+h5 {
+  font-size: $font-size-xl;
+}
+
+h6 {
+  font-size: $font-size-lg;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  color: $accent-cyan;
+  text-decoration: none;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $bright-cyan;
+  }
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+// Text Colors
+.text-cyan {
+  color: $accent-cyan;
+}
+
+.text-navy {
+  color: $primary-navy;
+}
+
+.text-white {
+  color: $white;
+}
+
+// Background Colors
+.bg-gradient {
+  background: $gradient-blue;
+}
+
+.bg-navy {
+  background-color: $primary-navy;
+}
+
+.bg-light {
+  background-color: $light-gray;
+}
+
+// Spacing
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+
+// ============================================
+// COMMON ELEMENTS
+// ============================================
+
+// Buttons
+.btn-primary {
+  background-color: $accent-cyan;
+  border-color: $accent-cyan;
+  color: $white;
+  font-weight: $font-weight-semibold;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-md;
+  transition: all $transition-base;
+  
+  &:hover {
+    background-color: $bright-cyan;
+    border-color: $bright-cyan;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+// Sections
+section {
+  padding: $spacing-3xl $spacing-lg;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-2xl $spacing-md;
+  }
+}
+
+// Container
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}

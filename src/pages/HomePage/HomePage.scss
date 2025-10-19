@@ -1,0 +1,110 @@
+/**
+ * HomePage Styles
+ * 
+ * Styling for the landing/hero page.
+ * Uses Modern Tech Blue color scheme with gradient background.
+ */
+
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.home-page {
+  @include animated-gradient;
+  min-height: 100vh;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  overflow: hidden;
+  
+  .content {
+    text-align: center;
+    position: relative;
+    z-index: 1;  
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      
+      @include tablet {
+        font-size: 2.5rem;
+      }
+    }
+    
+    h2 {
+      font-size: 2rem;
+      font-weight: $font-weight-normal;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+      
+      @include tablet {
+        font-size: 1.5rem;
+      }
+    }
+    
+    p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+      
+      @include tablet {
+        font-size: 1rem;
+      }
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      a {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        font-weight: $font-weight-semibold;
+        border-radius: $border-radius-md;
+        cursor: pointer;
+        transition: all $transition-base;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      .btn-primary {
+        background: $primary-navy;             
+        color: $white;
+        border: 2px solid rgba($white, 0.12);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25),
+                0 0 0 3px rgba($accent-cyan, 0.15);  
+        transition: transform $transition-base, box-shadow $transition-base, background $transition-base, border-color $transition-base;
+        
+        &:hover {
+          background: lighten($primary-navy, 4%);
+          border-color: rgba($accent-cyan, 0.5);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3),0 0 0 4px rgba($accent-cyan, 0.2);
+        }
+
+        &:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 4px rgba($white, 0.8),0 0 0 8px rgba($accent-cyan, 0.35);
+        }
+      }
+      
+      .btn-secondary {
+        background: rgba($white, 0.92);        
+        color: $primary-navy;
+        border: 2px solid transparent;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        
+        &:hover {
+          background: $white;
+          transform: translateY(-2px);
+        }
+
+        &:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 4px rgba($white, 0.8),0 0 0 8px rgba($accent-cyan, 0.35);
+        }
+      }
+    }
+  }
+}

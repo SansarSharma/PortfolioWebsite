@@ -1,0 +1,59 @@
+/**
+ * PagesCommon Styles
+ * 
+ * Shared styling for all page components.
+ * Provides consistent layout and spacing across pages.
+ */
+
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+
+// Base page layout - used by all pages
+.page {
+  min-height: 100vh;
+  min-width: 100vw;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include animated-gradient;
+  color: $white;
+  padding: $spacing-3xl $spacing-lg;
+  overflow-x: hidden;
+  
+  @include tablet {
+    padding: $spacing-2xl $spacing-md;
+  }
+  
+  .content {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;  
+    z-index: 1;
+    
+    h1 {
+      font-size: $font-size-5xl;
+      margin-bottom: $spacing-lg;
+      text-align: center;
+      
+      @include tablet {
+        font-size: $font-size-4xl;
+      }
+    }
+    
+    h2 {
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-md;
+      
+      @include tablet {
+        font-size: $font-size-3xl;
+      }
+    }
+    
+    p {
+      font-size: $font-size-xl;
+      opacity: 0.9;
+      line-height: 1.8;
+      margin-bottom: $spacing-md;
+    }
+  }
+}

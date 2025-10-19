@@ -1,0 +1,13 @@
+/**
+ * Global Index Styles
+ * 
+ * Entry point for all global styles
+ * Imports Bootstrap and custom global styles
+ */
+
+// Import Bootstrap CSS
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Import our custom global styles
+@import './styles/variables.scss';
+@import './styles/global.scss';

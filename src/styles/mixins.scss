@@ -1,0 +1,146 @@
+/**
+ * Mixins
+ * 
+ * Reusable SCSS mixins for common patterns.
+ * Import in components that need these utilities.
+ */
+
+@import './variables.scss';
+
+// ============================================
+// FLEXBOX MIXINS
+// ============================================
+
+// Flexbox center (both axes)
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flexbox column center
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flexbox space between
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ============================================
+// RESPONSIVE MIXINS
+// ============================================
+
+// Mobile-first breakpoints
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+// ============================================
+// ANIMATION MIXINS
+// ============================================
+
+// Fade in animation
+@mixin fade-in($duration: $transition-base) {
+  animation: fadeIn $duration $ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Slide up animation
+@mixin slide-up($duration: $transition-base) {
+  animation: slideUp $duration $ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Hover lift effect
+@mixin hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Glow effect
+@mixin glow-cyan {
+  box-shadow: $glow-cyan;
+  transition: box-shadow $transition-base;
+  
+  &:hover {
+    box-shadow: $glow-cyan-strong;
+  }
+}
+
+// ============================================
+// ANIMATED GRADIENT MIXIN
+// ============================================
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@mixin animated-gradient {
+  background: linear-gradient(
+    135deg,
+    $primary-blue 0%,
+    $accent-cyan 25%,
+    $bright-cyan 50%,
+    $accent-cyan 75%,
+    $primary-blue 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}

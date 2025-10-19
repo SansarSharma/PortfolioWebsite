@@ -1,0 +1,25 @@
+/**
+ * Bootstrap Customization
+ * 
+ * Override Bootstrap default variables with our custom theme colors.
+ * This file should be imported BEFORE Bootstrap in index.scss.
+ */
+
+@import './variables.scss';
+
+// Override Bootstrap variables
+$primary: $accent-cyan;
+$secondary: $primary-navy;
+$success: $accent-cyan;
+$info: $bright-cyan;
+$danger: $error;
+
+$body-bg: $white;
+$body-color: $charcoal;
+
+$link-color: $accent-cyan;
+$link-hover-color: $bright-cyan;
+
+$border-radius: $border-radius-md;
+
+$font-family-base: $font-primary;

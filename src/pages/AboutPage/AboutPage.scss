@@ -1,0 +1,309 @@
+/**
+ * AboutPage Styles
+ * 
+ * Styling for the About Me page.
+ * Includes profile section, education, skills highlight, and interests.
+ */
+
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.about-page {
+  @include animated-gradient;
+  padding: $spacing-3xl $spacing-lg;
+  
+  @include tablet {
+    padding: $spacing-2xl $spacing-md;
+  }
+  
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    h1 {
+      font-size: $font-size-5xl;
+      text-align: center;
+      margin-bottom: $spacing-2xl;  
+      
+      @include tablet {
+        font-size: $font-size-4xl;
+        margin-bottom: $spacing-2xl;
+      }
+    }
+    
+    // ============================================
+    // PROFILE SECTION
+    // ============================================
+    
+    .profile-section {
+      display: flex;
+      gap: $spacing-2xl;
+      align-items: center;  
+      margin-bottom: $spacing-2xl;  
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: $border-radius-md;
+      padding: $spacing-2xl;
+      box-shadow: $shadow-md;
+      
+      @include tablet {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .profile-image {
+        flex-shrink: 0;
+        
+        .placeholder-avatar {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, $primary-blue 0%, $accent-cyan 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 4rem;
+          font-weight: $font-weight-bold;
+          color: $white;
+          box-shadow: $shadow-lg;
+          
+          @include tablet {
+            width: 150px;
+            height: 150px;
+            font-size: 3rem;
+          }
+        }
+      }
+      
+      .profile-bio {
+        flex: 1;
+        
+        h2 {
+          font-size: $font-size-3xl;
+          margin-bottom: $spacing-md;
+          color: $white;
+          
+          @include tablet {
+            font-size: $font-size-2xl;
+          }
+        }
+        
+        p {
+          font-size: $font-size-lg;
+          line-height: 1.8;
+          margin-bottom: $spacing-md;
+          opacity: 0.95;
+          color: #D6E1E8;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    
+    // ============================================
+    // SECTION STYLES
+    // ============================================
+    
+    .section {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: $border-radius-md;
+      padding: $spacing-2xl;
+      margin-bottom: $spacing-2xl;
+      box-shadow: $shadow-md;
+      
+      @include tablet {
+        padding: $spacing-xl;
+      }
+      
+      h2 {
+        font-size: $font-size-3xl;
+        margin-bottom: $spacing-xl;
+        text-align: center;
+        color: $white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        
+        @include tablet {
+          font-size: $font-size-2xl;
+        }
+      }
+    }
+    
+    // ============================================
+    // EDUCATION SECTION
+    // ============================================
+    
+    .education-card {
+      h3 {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-sm;
+        color: $accent-cyan;
+      }
+      
+      .degree {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-xs;
+        color: #E0F2F8;
+      }
+      
+      .graduation {
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-md;
+        opacity: 0.9;
+        color: #D6E1E8;
+      }
+      
+      .coursework {
+        font-size: $font-size-base;
+        line-height: 1.6;
+        opacity: 0.85;
+        color: #E0F2F8;
+        
+        strong {
+          color: $accent-cyan;
+        }
+      }
+    }
+    
+    // ============================================
+    // SKILLS HIGHLIGHT SECTION
+    // ============================================
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: $spacing-xl;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .skill-category {
+      h3 {
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-md;
+        color: $accent-cyan;
+      }
+      
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-sm;
+        
+        .skill-tag {
+          background: rgba($accent-cyan, 0.2);
+          color: $white;
+          padding: $spacing-xs $spacing-md;
+          border-radius: 50px;
+          font-size: $font-size-sm;
+          font-weight: $font-weight-medium;
+          border: 1px solid rgba($accent-cyan, 0.4);
+          transition: all $transition-base;
+          
+          &:hover {
+            background: rgba($accent-cyan, 0.3);
+            border-color: $accent-cyan;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+    
+    .skills-note {
+      text-align: center;
+      font-size: $font-size-base;
+      opacity: 0.85;
+      color: #E0F2F8;
+      
+      a {
+        color: $accent-cyan;
+        text-decoration: underline;
+        font-weight: $font-weight-semibold;
+        
+        &:hover {
+          color: $bright-cyan;
+        }
+      }
+    }
+    
+    // ============================================
+    // INTERESTS SECTION
+    // ============================================
+    
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: $spacing-lg;
+    }
+    
+    .interest-card {
+      background: rgba($white, 0.05);
+      border-radius: $border-radius-md;
+      padding: $spacing-xl;
+      text-align: center;
+      transition: all $transition-base;
+      border: 1px solid rgba($accent-cyan, 0.2);
+      
+      &:hover {
+        transform: translateY(-5px);
+        background: rgba($white, 0.1);
+        border-color: $accent-cyan;
+        box-shadow: $shadow-lg;
+      }
+      
+      .interest-icon {
+        font-size: 3rem;
+        margin-bottom: $spacing-md;
+      }
+      
+      h3 {
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-sm;
+        color: $accent-cyan;
+      }
+      
+      p {
+        font-size: $font-size-sm;
+        opacity: 0.85;
+        line-height: 1.6;
+        color: #E0F2F8;
+      }
+    }
+    
+    // ============================================
+    // CALL TO ACTION
+    // ============================================
+    
+    .cta-section {
+      text-align: center;
+      margin-top: $spacing-3xl;
+      
+      p {
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        padding: $spacing-md $spacing-2xl;
+        background: $accent-cyan;
+        color: $white;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        border-radius: $border-radius-md;
+        text-decoration: none;
+        transition: all $transition-base;
+        border: 2px solid $accent-cyan;
+        
+        &:hover {
+          background: $bright-cyan;
+          border-color: $bright-cyan;
+          transform: translateY(-2px);
+          box-shadow: $shadow-lg;
+        }
+      }
+    }
+  }
+}
